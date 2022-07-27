@@ -71,10 +71,10 @@ impl From<QQWeatherResult> for Weather {
 ///
 /// # Examples
 /// ```rust
-/// # async fn run()  {
+/// # tokio_test::block_on(async {
 /// let result = public_api_rs::weather::qq_weather("北京市", "北京市").await;
 /// assert!(result.is_ok());
-/// # }
+/// # });
 /// ```
 pub async fn qq_weather<T>(province: T, city: T) -> Result<Weather>
 where
@@ -87,10 +87,11 @@ where
 mod tests {
     use super::*;
 
-    #[tokio::test]
-    async fn test_weather() {
-        let r = qq_weather("北京市", "北京市").await;
-        dbg!(&r);
-        assert!(r.is_ok());
+    #[test]
+    fn test_weather() {
+        tokio_test::block_on(async {
+            let result = qq_weather("北京市", "北京市").await;
+            assert!(result.is_ok());
+        });
     }
 }
