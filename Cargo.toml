@@ -1,6 +1,11 @@
 [package]
+description = "一些常用的api集合"
+documentation = "https://docs.rs/public-api-rs"
 edition = "2021"
+license = "Apache-2.0"
 name = "public-api-rs"
+readme = "README.md"
+repository = "https://github.com/zzliujianbo/public-api-rs"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
