@@ -2,7 +2,8 @@
 //! 提供一些常用的api方法。
 //!
 //! 目前只实现了腾讯天气的获取。
-//! 
+//!
 //!
 
+pub mod bilibili;
 pub mod weather;

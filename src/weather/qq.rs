@@ -50,3 +50,17 @@ where
     .await?;
     Ok(result)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_weather() {
+        tokio_test::block_on(async {
+            let result = weather("北京市", "北京市").await;
+            dbg!(&result);
+            assert!(result.is_ok());
+        });
+    }
+}

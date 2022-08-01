@@ -63,7 +63,7 @@ impl From<QQWeatherResult> for Weather {
 
 /// 调用腾讯天气接口获取天气信息
 ///
-/// 腾讯天气接口地址: `https://wis.qq.com/`
+/// 腾讯天气接口地址: `https://wis.qq.com/weather/common`
 ///
 /// # Arguments
 /// * `province` - 省份名称
@@ -81,17 +81,4 @@ where
     T: Into<String>,
 {
     qq::weather(province, city).await.map(|r| r.into())
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_weather() {
-        tokio_test::block_on(async {
-            let result = qq_weather("北京市", "北京市").await;
-            assert!(result.is_ok());
-        });
-    }
 }
