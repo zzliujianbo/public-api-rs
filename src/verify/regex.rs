@@ -4,7 +4,8 @@ use regex::Regex;
 macro_rules! impl_regex {
     ($re_name:ident,$re_str:expr) => {
         /// 正则表达式验证
-        #[doc = concat!("验证`text`参数是否满足`", stringify!($re_str))]
+        ///
+        #[doc = concat!("正则表达式：`", stringify!($re_str), "`")]
         pub fn $re_name(text: &str) -> bool {
             lazy_static! {
                 static ref RE: Regex = Regex::new($re_str).unwrap();
