@@ -6,7 +6,7 @@ license = "Apache-2.0"
 name = "public-api-rs"
 readme = "README.md"
 repository = "https://github.com/zzliujianbo/public-api-rs"
-version = "0.1.2"
+version = "0.1.3"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
