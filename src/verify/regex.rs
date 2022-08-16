@@ -38,9 +38,6 @@ impl_regex!(is_ipv4, r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
 
 impl_regex!(is_blank_line, r"^[\s&&[^\n]]*\n$");
 
-///
-/// 111
-///
 impl_regex!(is_blank, r"^\s*$");
 
 impl_regex!(is_number, r"\d+");
